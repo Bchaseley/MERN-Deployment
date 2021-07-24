@@ -7,7 +7,7 @@ const ShowPet = ({id}) => {
 
     const [pet, setPet] = useState({})
     useEffect(() => {
-        axios.get("http://localhost:8000/api/pets/" + id)
+        axios.get("/api/pets/" + id)
             .then(res => setPet(res.data))
     }, [id])
 

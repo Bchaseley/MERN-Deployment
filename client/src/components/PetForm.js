@@ -14,7 +14,7 @@ const PetForm = () => {
 
     const addPet = e => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/pets', { name, type, description, skill1, skill2, skill3 })
+        axios.post('/api/pets', { name, type, description, skill1, skill2, skill3 })
             .then(res => navigate('/'))
             .catch(err => {
                 const errorResponse = err.response.data.errors;

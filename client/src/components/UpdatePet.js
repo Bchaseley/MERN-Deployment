@@ -13,7 +13,7 @@ const UpdatePet = ({id}) => {
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/pets/' + id)
+        axios.get('/api/pets/' + id)
             .then(res => {
                 setName(res.data.name);
                 setType(res.data.type);
@@ -27,7 +27,7 @@ const UpdatePet = ({id}) => {
     
     const updatePet = e => {
         e.preventDefault();
-        axios.put('http://localhost:8000/api/pets/' + id, { name, type, description, skill1, skill2, skill3 })
+        axios.put('/api/pets/' + id, { name, type, description, skill1, skill2, skill3 })
             .then(res => {navigate('/')})
             .catch(err => {
                 const errorResponse = err.response.data.errors;

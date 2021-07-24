@@ -8,7 +8,7 @@ const Main = () => {
     const [loaded, setLoaded] = useState(false);
     
     useEffect(() => {
-        axios.get('http://localhost:8000/api/pets')
+        axios.get('/api/pets')
             .then(res => {
                 setPets(res.data);
                 setLoaded(true);
