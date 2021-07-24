@@ -12,7 +12,7 @@ const ShowPet = ({id}) => {
     }, [id])
 
     const adoptPet = (petId) => {
-        axios.delete('http://localhost:8000/api/pets/' + petId)
+        axios.delete('/api/pets/' + petId)
             .then(res => {
                 removeFromDom(petId)
             })
